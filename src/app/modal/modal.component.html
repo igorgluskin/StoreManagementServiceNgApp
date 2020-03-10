@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>{{options?.title}}</h1>
+<div mat-dialog-content>
+  <p>{{options?.content}}</p>
+  <mat-form-field *ngIf="options?.showInput">
+    <input matInput [(ngModel)]="options.data">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">{{options.button1}}</button>
+  <button mat-button [mat-dialog-close]="options.data" cdkFocusInitial>{{options.button2}}</button>
+</div>

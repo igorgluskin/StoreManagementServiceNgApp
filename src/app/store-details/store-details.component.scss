@@ -1,0 +1,30 @@
+mat-form-field {
+    width: 50rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+button.basic-btn {
+    margin-right: 2rem;
+}
+
+.mat-chip.mat-standard-chip {
+    &.disabled {
+        color: rgba(117, 113, 113, 0.87);
+    }
+}
+
+.underlined {
+    border-bottom: 1px solid gray;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.half-field {
+    width: 24rem;
+    margin-right: 2rem;
+
+}

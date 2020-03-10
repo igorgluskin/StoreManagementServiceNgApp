@@ -1,0 +1,46 @@
+.toolbar {
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 500;
+    padding: 1rem;
+    height: 3vh;
+}
+
+.drawer {
+    height: 97vh;
+}
+
+.bordered {
+    border: solid;
+    border-color: black;
+    border-width: 2px;
+}
+.flex-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.store-list {
+    min-width: 25%;
+    max-width: 25%;
+    max-height: 94vh;
+    overflow-y: scroll;
+    border-right: solid black 1px;
+}
+
+.store-details {
+    width: 100%;
+    padding: 2rem;
+    max-height: 85vh;
+    overflow-y: scroll;
+}
+
+.selected {
+    background-color: #e0e0e0;
+}

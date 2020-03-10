@@ -1,0 +1,74 @@
+<div class="details-form" *ngIf="store">  
+  <form [formGroup]="storeDetailsForm">
+   
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input formControlName="name" matInput>
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline">
+      <mat-label>Type</mat-label>
+      <input formControlName="type" matInput>
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline">
+      <mat-label>Address</mat-label>
+      <input formControlName="address" matInput>
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline">
+      <mat-label>Address 2</mat-label>
+      <input formControlName="address2" matInput>
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline">
+      <mat-label>City</mat-label>
+      <input formControlName="city" matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>State</mat-label>
+      <input formControlName="state" matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Zip</mat-label>
+      <input formControlName="zip" matInput>
+    </mat-form-field>
+
+    <div formGroupName="location">
+      <mat-form-field class="half-field" appearance="outline">
+        <mat-label>Latitude</mat-label>
+        <input formControlName="lat" matInput>
+      </mat-form-field>
+      <mat-form-field class="half-field" appearance="outline">
+        <mat-label>Longitude</mat-label>
+        <input formControlName="lon" matInput>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Hours</mat-label>
+      <input formControlName="hours" matInput>
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline">
+      <mat-label>Services</mat-label>
+      <mat-chip-list aria-label="services">
+        <mat-chip [ngClass]="{'disabled': !editing}" *ngFor="let service of storeDetailsForm.get('services').value; let i = index">
+          {{service}} <mat-icon matChipRemove *ngIf="editing" (click)="removeService(i)">cancel</mat-icon>
+        </mat-chip>
+        <mat-chip (click)="addService()" *ngIf="editing">
+          Add New Service <mat-icon>add</mat-icon>
+        </mat-chip>
+      </mat-chip-list>
+    </mat-form-field>
+  </form>
+
+  <button mat-raised-button *ngIf="!editing" (click)="confirmDelete()" class="basic-btn">Delete</button>
+  <button mat-raised-button *ngIf="!editing" (click)="setEditing(true)" class="basic-btn">Edit</button>
+  <button mat-raised-button *ngIf="editing" (click)="setEditing(false)" class="basic-btn">Cancel</button>
+  <button mat-raised-button *ngIf="editing" (click)="submitStore()" class="basic-btn">Submit</button>
+  <button mat-raised-button *ngIf="editing" (click)="setFormData()" class="basic-btn">Reset</button>
+  
+</div>
